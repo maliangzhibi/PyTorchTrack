@@ -5,11 +5,11 @@
 - dataset: the data for training your model
 - data: the sampler and the handler of data for training
 - model: the network for your training
--- backbone: the extracter for deep features
--- network: the network for your model
+   * backbone: the extracter for deep features
+   * network: the network for your model
 - trainer: the trainer for your model
--utils: the extra dependencies
-train.py: perform training
+- utils: the extra dependencies
+- train.py: perform training
 
 ## tracking
 pass
