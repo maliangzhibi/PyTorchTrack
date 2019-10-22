@@ -6,8 +6,7 @@ import glob
 
 from skimage import io
 import cv2 as cv
-
-if __name__ = '__main__':
+def compute_image_mean():
     parser = argparse.ArgumentParser()
     parser.add_argument('--meanPrefix', default = 'mean_img', type = str, help='Prefix of the mean file')
     parser.add_argument('--img_dir', default='crop_125_2.0', type=str, help = 'Dir of image to read')
@@ -48,9 +47,13 @@ if __name__ = '__main__':
         io.imsave('{}.png'.format(args.meanPrefix), meanImg)
     
     avg_chans = np.mean(meanImg, axis=(0,1))
-    
+
     if opencv_backend:
         print('image BGR mean: {}'.format(avg_chans))
     else:
         print('image RGB mean: {}'.format(avg_chans))
+
+
+if __name__ = '__main__':
+    compute_image_mean()
 
