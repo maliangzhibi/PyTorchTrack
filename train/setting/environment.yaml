@@ -1,0 +1,5 @@
+got10k:
+    root: "G:\\got10k"
+    train: "G:\\got10k\\train"
+    val: "G:\\got10k\\val"
+    test: "G:\\got10k\\test"
