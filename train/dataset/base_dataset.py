@@ -1,25 +1,27 @@
 import torch.utils.data as data
-import image_loader
+import sys
+import os
+
+sys.path.append(os.path.abspath('../../'))
+from train.data.image_loader import default_image_loader as image_loader
 
 class BaseDataset(data.Dataset):
     '''
     base dataset for loading datasets
     '''
-    def __init__(self, root, image_loader=image_loader, transform=None):
+    def __init__(self, root, transform=None):
         '''
         args:
             root: the path to dataset
-            image_loader: the function for reading images
         '''
         if root == '':
             raise Exception('the dataset path is not setup.')
         self.root = root
-        self.image_loader = image_loader
-        self.seq_list = []
+        self.all_seqs = []
         self.transform = transform
     
     def __len__(self):
-        return len(seq_list)
+        return len(self.all_seqs)
 
     def __getitem__(self, idx):
         '''
